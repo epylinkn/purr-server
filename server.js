@@ -13,6 +13,14 @@ app.get('/', (req, res) => {
   res.render('index', { foo: 'bar' })
 })
 
+app.get('/api/cats', (req, res) => {
+  res.json([
+    'Ari Fancybeast',
+    'Tama Hornpoopsie',
+    'Swift Celestial',
+  ])
+})
+
 const server = require('http').createServer(app).listen(PORT, function() {
   console.log('Server listening at port: ', PORT);
 });
